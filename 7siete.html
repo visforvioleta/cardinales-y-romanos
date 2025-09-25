@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>7️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">VII</h1>
+
+        <div class="instructions">
+          <h2>
+            Relax, take it easy.
+          </h2>
+          <p>
+            Me bautizaron bien grande porque el colegio así lo pidio. Mis padres se casaron por la iglesia porque el colegio así lo
+            pidio. Pero vaya que poca misericordia tienen cuando una no puede ir a misa
+            todo los domingos.<br />
+            <small><strike>¿Eran realmente buenas cristianas y honestas ciudadanas?</strike></small>
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initImage(
+              "https://i.ibb.co/TqK1tKX/Mar-a-Auxiliadora-Entera.jpg"
+            );
+            s1.initImage("https://i.ibb.co/QnDbNrQ/jesus.png");
+            src(s0)
+              .modulate(osc(5, 0.1, 2))
+              .modulate(noise(1))
+              .colorama([0.001, 0.01, 0.1].ease("easeInQuint"))
+              .scrollY(1, -0.075)
+              .blend(o0, 0.25)
+              .scale(0.8, 0.5)
+              .modulateRotate(o0, 0.15)
+              .layer(
+                src(s1)
+                  .pixelate(225, 225)
+                  .hue(({ time }) => Math.cos(time / 10))
+                  .scrollY(1, 0.075)
+              )
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

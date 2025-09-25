@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>8️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">VIII</h1>
+
+        <div class="instructions">
+          <h2>
+            Way away away so you can see how it feels to be alone and not
+            believe anything.
+          </h2>
+          <p>
+            Que porque soy como soy, que porque hablo así, que porque mis ojos
+            tan rasgados y mi piel tan morena. Jamás fui bonita, simplemente
+            exótica <small>(me hubiera gustado conocer el verdadero rostro de Laura
+            Vicuña desde pequeña, quizás no me hubiese sentido tan sola, ni tan
+            foránea en mi "propio" país)</small>.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            y = () => -mouse.y / innerHeight + 0.5; // 0.5→-0.5
+            s0.initImage("https://i.ibb.co/99WDNxh/yop.jpg");
+            s2.initImage("https://i.ibb.co/G7zkY2T/FOTO-0120100209112932.png");
+            src(s0)
+              .modulateScrollY(s0, () => y())
+              .modulateScrollX(s0, () => 1 * Math.sin(time * 0.1))
+              .add(s0, 0.15)
+              .scrollX(0.225)
+              .layer(
+                src(s2)
+                  .scrollX(0.9, 0.05)
+                  .scale(0.5, 0.5)
+                  .mask(
+                    shape(4, 0.2, 0.05)
+                      .scrollX(0.6168)
+                      .scrollY(1, 0.5)
+                      .modulate(o0, 0.05)
+                  )
+              )
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣3️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XIII</h1>
+
+        <div class="instructions">
+          <h2>
+            I'm wondering where the hours went.
+          </h2>
+          <p>
+            Siempre me sentí un poco out, tenía padres viejos, nunca jugue a la
+            play, ni ocupe encarta. Tuve computador tardiamente en comparación
+            al resto de mis compañeras, pero si fui la primera en tener redes
+            sociales. Le hice facebook y twitter a mis amigas mas cercanas, me
+            sentía hacker customizando myspace o blogspot y podía pasar horas
+            descubriendo bandas nuevas y descargando música en Ares, metiéndome
+            a latinchat o hablando en msn con la Val, mi mejor amiga virtual. Mi
+            nickname no ha cambiado y creo que aún vivo de los recuerdos.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s1.initImage("https://i.ibb.co/gJpsk5T/9725.jpg");
+            src(s1)
+              .modulateScale(osc(1), 0.5)
+              .modulatePixelate(noise(1).pixelate(10, 10), 1028, 10)
+              .out();
+
+            speed = 0.015;
+          </script>
+
+          <div id="container"></div>
+          <script>
+            let error;
+            let sketch = function(p) {
+              p.setup = function() {
+                p.createCanvas(p.windowWidth, p.windowHeight);
+                p.pixelDensity(1);
+                p.error = p.loadImage(
+                  "https://cdn.glitch.com/53ea9712-1925-4dda-b1db-548df11f94be%2Ferror.png?v=1630423292200"
+                );
+              };
+
+              p.draw = function() {
+                p.imageMode(p.CENTER);
+                p.image(p.error, p.mouseX, p.mouseY,300,200);
+
+              };
+
+              p.mousePressed = function() {
+                p.clear();
+              };
+            };
+            new p5(sketch, window.document.getElementById("container"));
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

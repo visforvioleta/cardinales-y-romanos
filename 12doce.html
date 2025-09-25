@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣2️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XII</h1>
+
+        <div class="instructions">
+          <h2>
+            Why'd you have to go and make things so complicated?
+          </h2>
+          <p>
+            A veces le festejábamos el cumpleaños a la banca donde soliamos
+            sentarnos. Reiamos de las tonteras mas absurdas y créabamos nuestros
+            propios retiros espirtuales. Una vez hicimos un diario con las
+            noticias más actualizadas sobre nosotras mismas (tenía versión
+            física y digital). Grabamos un reality, haciamos competencias y
+            eliminabamos por convivencia. Me gustaba tomarles fotos en toda
+            ocasión porque presentía que se podía esfumar. <br /><small><strike>Siempre me ha
+            costado mucho definir el vínculo cuando se trata de amistad. ¿En que
+            momento se forjaba aquel lazo, ¿era yo, la mejor amiga de alguien?.
+            Con el pasar del tiempo se fue volviendo denso (escolarmente denso
+            digo), algunas personalidades se sobreponían ante otras, siempre
+            traté de estar al margen, ahí pero no muy ahí, hasta que se volvió
+            tóxico para mi y otras amigas más. Implícitamente dije adiós a
+            ciertas personas, pero también conserve a otras. Definitivamente las
+            mujeres han sido mi mejor compañía (aunque la sociedad diga lo
+            contrario)</strike></small>.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initVideo(
+              "https://media.giphy.com/media/1RjHE921kf3sMEs5bN/giphy.mp4?cid=ecf05e47tss4ibhijdoz65pqypbal1f809p5u8rya7gkocz7&rid=giphy.mp4&ct=s"
+            );
+            s1.initCam();
+            solid(1, 0.4, 0.671)
+              .add(
+                osc(20, 0.1).modulateRotate(src(s0).scale(0.4, 0.7), 1.3),
+                0.55
+              )
+              .modulate(o0, 0.01)
+              .contrast(0.85)
+              .modulateScrollY(src(s1), 0.5)
+              .blend(o0, 0.925)
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

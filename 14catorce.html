@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣4️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XIV</h1>
+
+        <div class="instructions">
+          <h2>
+            Not listening anyway.
+          </h2>
+          <p>
+            Pies despellejados ¿quién va un concierto con chalas?. Jamás había
+            sentido tanto dolor y felicidad a la vez. Las desventajas de ser
+            baja, no respirar, ni ver nada hasta el crowsurfing. El comienzo,
+            tan fugaz y emocionante, cantar y llorar, y llorar de nuevo porque
+            acabó. Mamá me reta, que no me dará más permiso dice, pero al dormir
+            me echa cremita en los pies. Seguí yendo, me las ingeniaba, una y
+            otra vez porque pocas cosas me hacen sentir tan bien como la música
+            en vivo.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initImage(
+              "https://i.ibb.co/3y9WvYy/2295490346-c6545b5f6e-o.jpg"
+            );
+            s1.initImage(
+              "https://i.ibb.co/r7Y3f14/2356094319-b742c58cf0-o.jpg"
+            );
+            s2.initVideo(
+              "https://live.staticflickr.com/video/3407497661/debf2657d8/700.mp4?s=eyJpIjozNDA3NDk3NjYxLCJlIjoxNjMwNDI4NTM3LCJzIjoiZmVlOWRhZTA3ZDQ1YmZlNzkxYzYzNWQ1ZGRkZThhNGQyYzc4YmE1YyIsInYiOjF9"
+            );
+            src(s0)
+              .modulateScrollY(o0, -0.075, 0.1)
+              .add(src(s1).modulateScrollX(s1, 0.1, -0.01))
+              .add(
+                src(s2)
+                  .modulate(osc(5, 0.25))
+                  .hue(0.05),
+                0.4
+              )
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

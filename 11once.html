@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣1️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XI</h1>
+        <div class="instructions">
+          <h2>
+            Always sleeping in, and sleeping for the wrong team.
+          </h2>
+          <p>
+            Las series gringas, la música gringa. Papá decidió que aprendiera
+            inglés. Era la más chica en el Instituto y los más adultos pensaban
+            que se habían equivocado de sala al verme sentada. Yo solo me
+            conformaba con que podría saber de que se trataban las letras de My
+            Chemical Romance o entender mejor las series que pasaban en la tv.
+            En retrospectiva, hay pocas cosas si que agradezco de la cultura
+            gringa. Como the L word que ponía a volumen bajito para que no me
+            decubrieran despierta a altas horas de la noche o a Kim Stolz
+            declarándose lesbiana ante las otras participantes de America's Next
+            Top Model. Probablemente no representaban el sentir de una nación,
+            pero al menos era mas visbilización de la que podía apreciar en la
+            tv chilena. Pequeños gestos como ver a los integrantes de mi bandas
+            favoritas besarse unos con otros podrían ser mero marketing, pero no
+            dejaron de ser significativos para una chica lesbiana, bisexual o
+            pansexual que en ese entonces se convenció de quizás no era tan
+            rara.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+s0.initVideo( "https://media.giphy.com/media/XE0AFMZ0Q8WHQINszU/giphy.mp4?cid=790b76111db9fa9b1fb5ce8776ccbd0a8ec762e12765a52b&rid=giphy.mp4&ct=s");
+s1.initImage("https://i.ibb.co/xGKSxX8/COLLAGEGAY.png")
+ osc(20, 0.1, 1.55)
+.rotate(1, 0.1)
+.modulate(osc(5))
+ .modulate(src(s0))
+ .add(voronoi(0.05))
+.add(o1)
+.layer(src(s1).scale(1.1,0.91).colorama(() => mouse.y / 500).modulateScale(s1,[0,0.75].smooth()))
+.out(o0);
+
+  voronoi(200, 0.5, 10).out(o1);
+ render(o0);
+
+speed = 0.25
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

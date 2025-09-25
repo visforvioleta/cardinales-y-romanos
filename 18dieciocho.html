@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣8️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XVIII</h1>
+
+        <div class="instructions">
+          <h2>
+            Things have changed for me, and that's okay.
+          </h2>
+          <p>
+            Cumplir la mayoría llegó en tiempo oportuno. Un duelo latente, el
+            primer amor, las nuevas amistades y una última primavera colegial,
+            florecer. El olor a playa, el vodka naranja y los tragos baratos. La
+            noche sin restricción de edad, los conciertos y las juntas hasta el
+            amanecer. La vida universitaria, no dormir y los chimbombos
+            asquerosos. La burbuja reventó.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s1.initImage("https://i.ibb.co/gSLFspY/cambiar.png");
+            osc(20, 0.1, 0.25)
+              .rotate(1, 0.15)
+              .blend(o0, 0.85)
+              .modulateScale(s1, 0.05)
+              .add(gradient(1), 0.05)
+              .modulate(s1)
+              .blend(src(s1), 0.25)
+              .modulateRotate(o0, 0.1)
+              .scrollX(0, ({ time }) => Math.sin(time) / 1000)
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+</html>

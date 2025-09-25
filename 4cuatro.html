@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">IV</h1>
+
+        <div class="instructions">
+          <h2>
+            Everything makes fountains of your eyes.
+          </h2>
+          <p>
+            Viene y va el sentir que nada me conecta a nadie, que estoy sola en
+            tal inmensidad y no tengo de donde aferrarme. La primera y única vez
+            que se habló a respecto fue cuando me hicieron dibujar dónde había
+            nacido. Imagino que fue el momento correcto, pero aún agradecería
+            respuestas.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initImage("https://i.ibb.co/87gRsRZ/dibujo.jpg");
+            src(s0).out();
+          </script>
+
+          <div id="container"></div>
+          <script>
+            let sketch = function(p) {
+              p.setup = function() {
+                p.createCanvas(p.windowWidth, p.windowHeight);
+                p.pixelDensity(1);
+              };
+
+              p.draw = function() {
+                //p.clear()
+                p.stroke(0,225);
+                p.strokeWeight(p.random(3,5));
+                p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
+                p.noStroke();
+                p.textSize(100);
+                p.fill(250, 5);
+                p.text("✏️", p.mouseX - 10, p.mouseY - 30);
+              };
+
+              p.mousePressed = function() {
+                p.clear();
+              };
+            };
+
+            new p5(sketch, window.document.getElementById("container"));
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

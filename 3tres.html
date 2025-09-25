@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">III</h1>
+
+        <div class="instructions">
+          <h2>
+            The memories fade like looking through a fogged mirror.
+          </h2>
+          <p>
+            Los cumpleaños tardios,<br />
+            los granados florecidos,<br />
+            tres tortas y múltiples deseos.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initImage("https://i.ibb.co/mDhtvRR/Esc-ner-20210830.jpg");
+            s1.initVideo(
+              "https://c.tenor.com/U47YaH321DkAAAPo/pink-petals-pink.mp4"
+            );
+            src(s0)
+              .modulateScale(osc(2))
+              .layer(src(s1).luma(0.575, 0.1))
+              .add(osc(700), 0.125)
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

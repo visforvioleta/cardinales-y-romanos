@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣7️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XVII</h1>
+
+        <div class="instructions">
+          <h2>
+            I'm not o-fucking-kay.
+          </h2>
+          <p>
+            Era difícil verla partir, pero más tenerla aún aquí. Ya no había
+            grandes festines, sino tirar a la juguera la cazuela para darle de
+            comer. Pocos la visitaban y resentía cada vez que la contactaron
+            solo por un favor. <br>Los días pasaban y ese último quise escapar, su
+            respiración agitada no me dejaba ni pensar, cobarde y adolescente,
+            me fui. Me llamaron y ya no estaba. <br><small><strike>(Tanto amor y odio en/hacia una
+            persona.)</strike></small>
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s1.initImage("https://i.ibb.co/9YhTDfp/Esc-ner-20210830-4.jpg");
+            solid(0.537, 0.812, 0.941)
+              .add(
+                noise(2.5)
+                  .luma(0.25, 1.5)
+                  .modulateScale(
+                    osc(2.5).modulate(
+                      noise(10)
+                        .rotate(1, 0.5)
+                        .blend(o0, 0.5)
+                    )
+                  )
+              )
+              .modulateRotate(osc(5))
+              .modulateHue(noise(5))
+              .contrast(0.85)
+              .brightness(-0.15)
+              .add(
+                src(s1).modulateScale(
+                  osc(0.5)
+                    .rotate(1, 0.25)
+                    .repeat(20, 20)
+                ),
+                0.2
+              )
+              .modulateRotate(
+                src(s1)
+                  .scrollY(1, 0.001)
+                  .scrollX(1, 0.001),
+                0.05
+              )
+              .modulateScale(osc(0.5).scrollY(1, 0.9))
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣6️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XVI</h1>
+
+        <div class="instructions">
+          <h2>
+            Mama, we're all gonna die.
+          </h2>
+          <p>
+            La comida era un trámite más y la cama el mejor lugar. Quería el
+            control, aunque al menos fuese de mi. La inseguridad a flor de piel,
+            el asco al reconocerse distinta. La internet te succiona, pero te
+            cobija en cierto sentido. Los pensamientos suicidas se saborean y lo
+            único que si tragué fue un odio profundo. Tal vez de esa forma
+            arrancaba de mi pecho este equívoco y desbordante amor.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+            s1.initImage("https://i.ibb.co/vhLnndD/DSCI0162.jpg");
+            src(s1)
+              .scale(0.4, 1.01, 2.5)
+              .scrollX(1, 0.1)
+              .diff(src(o0))
+              .repeat(2, 2)
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

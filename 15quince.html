@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣5️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">XV</h1>
+
+        <div class="instructions">
+          <h2>
+            The kids are all fucked up.
+          </h2>
+          <p>
+            Lo reconozco fue hiriente a veces, manipuladora emocional quizás.
+            ¿Acaso quieres que sea como tu? le dije, sabía que su
+            infancia-adolescencia no había sido tan privilegiada como la mía,
+            casi siempre terminaba cediendo, supongo que no me quería ver
+            encerrada.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <!-- <a href="/index.html"> home</a>-->
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            osc(10,0.1,1.5).colorama(0.9).posterize(9).kaleid(25).mask(shape(25, 0.25).modulateScale(noise(400.5, 0.5)))
+  .mask(shape(400, 1, 2.125)).modulateScale(osc(6, 0.125, 0.05).kaleid(50)).mult(osc(20, 0.05, 2.4).kaleid(5), 0.25).scale(1.75, 0.65, 0.5).modulate(noise(0.5)).saturate(3).scale(1.5)
+.blend(o0,.9)
+.modulate(o0,0.1)
+.kaleid([2,3,4,5,6,5,4,3].ease("easeInQuint"))
+.brightness(0.025)
+.contrast(1.01)
+  .out()
+          </script>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+</html>

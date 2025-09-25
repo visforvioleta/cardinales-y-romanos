@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>5️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">V</h1>
+
+        <div class="instructions">
+          <h2>
+            They're all out without you having fun.
+          </h2>
+          <p>
+            Sáltabamos por los sillones al son de Los Prisioneros y términábamos
+            tomando técito en nuestros platos. A veces queríamos jugar al
+            exterior pero la amenaza constante de la vecina nueva nos hacía
+            encerrarnos. Nunca me dejaron defenderme porque era más chica, pero
+            terminé evitando salir. Podía pasar horas viendo TV y la pieza se
+            convirtió en mi mejor refugio.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            x = () => -mouse.x / innerWidth + 0.5; // 0.5→-0.5
+            y = () => -mouse.y / innerHeight + 0.5; // 0.5→-0.5
+
+            s0.initImage("https://i.ibb.co/0nfngTJ/tv.png");
+            noise(150, 5)
+              .layer(src(s0).colorama(() => x(), () => y()))
+              .scale(0.9, 0.4, 0.5)
+              .modulate(noise(0.05), 0.5)
+              .out();
+          </script>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+</html>

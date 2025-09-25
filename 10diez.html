@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1️⃣0️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">X</h1>
+
+        <div class="instructions">
+          <h2>
+            They say that kid he's got soul.
+          </h2>
+          <p>
+            • Mi primer cassete de la feria fue uno de digimon, tenía el opening, ending y
+            el resto eran puros remixes.<br />
+            • Mi prima me enseñó todo lo que sabía de música, así conocí a Avril
+            Lavigne, Placebo y t.A.T.u <small>(aunque también me empezó a gustar el pop
+            en español a escondidas)</small>.<br />
+            • Mamá tenía la costumbre de grabar en VHS sus programas favoritos y
+            encima comencé a grabar los videoclips que quería conservar
+            para la posteridad.<br />
+            • Casi toda mi familia participaba en un grupo folclórico y empecé a
+            odiar la cueca porque ensayaban en el living. <br />
+            • Odiaba las mañanas de aseo de fin de semana con el mismo dvd de
+            Juan Gabriel en el Palacio de Bellas Artes una y otra vez <small>(ahora las
+            extraño)</small>.<br />
+            • Me gustaba quedarme hasta la madrugada para ver la programación
+            distinta de MTV. <br />
+            • Muchas veces intentamos armar bandas con mis primas, pero solo una
+            sabía tocar algún instrumento. <br />
+            • Solo cantaba cuando debiamos participar en los festivales del
+            colegio. <br />
+            • Insistí a papá de un día a otro para que me enseñara a tocar guitarra
+            y ganar un meet & greet con panic! at the disco, con mi mano
+            llena de ampollas fui a concursar a la radio, al menos me defendí
+            cantando. <br />
+            • Y me sigue dando verguenza cantar.
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <!--aqui dentro del script el codigo de Hydra -->
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: true
+            });
+
+           <!-- s1.initVideo(              "https://media.giphy.com/media/UuH7UJfiv2qdDdjC0e/giphy.mp4?cid=790b76113c9838d85f07f9c1b78610ae45b3ce212cee5941&rid=giphy.mp4&ct=s");
+         <!--   osc(20, 0.1, () => mouse.y / 100)
+             <!-- .modulateScale(o0, 0.25)
+              <!--.modulate(noise(1.5, 0.25))
+              <!--.rotate(0.1, 0.01)
+              <!--.blend(o0, 0.15)
+              <!--.diff(src(s1).repeat(3))
+              <!--.out(); -->
+            
+            s1.initVideo("https://media.giphy.com/media/UuH7UJfiv2qdDdjC0e/giphy.mp4?cid=790b76113c9838d85f07f9c1b78610ae45b3ce212cee5941&rid=giphy.mp4&ct=s")
+s2.initVideo("https://media.giphy.com/media/lDPPhStHv9Jfpem7wI/giphy.mp4")
+
+osc(100, 0.1, () => a.fft[1]*2)
+.modulateScale(o0, 0.25)
+.modulate(noise(1, 0.25))
+.rotate(0.1, 0.15)
+.blend(o0, () => a.fft[1]*2)
+            <!--o0,0.25-->
+.diff(src(s1).repeat(3))
+            .mult(solid(0.85))
+.layer(src(s2).scale(0.75,0.75).mask(shape(50,0.1,0.5)))
+.out()
+
+a.show()
+a.setCutoff(4)
+a.setScale(2)
+speed = 0.1
+            
+          </script>
+        </div>
+      </div>
+    </div>
+    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ 
+    <footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer>-->
+  </body>
+</html>

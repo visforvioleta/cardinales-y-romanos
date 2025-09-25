@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>9️⃣</title>
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page // TITULO -->
+        <h1 class="title">IX</h1>
+
+        <div class="instructions">
+          <h2>
+            It felt more to me like a jail cell, a penitentiary.
+          </h2>
+          <p>
+            Siempre se dio por hecho que era buena en todo, pero en verdad era
+            porque me las tenía que arreglar sola. Mi primer gran triunfo fue el
+            1 que me dieron porque no pudieron colocarme un 0 desde entonces los
+            números se convirtieron en mi peor enemigo.
+          </p>
+
+          <canvas id="myCanvas" width="1920px" height="1080px"></canvas>
+
+          <!--<a href="/10diez.html"> NEXT 10</a>-->
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      });
+
+      s1.initVideo("https://c.tenor.com/CowGNQSUsOYAAAPo/confused-math.mp4");
+      src(s1)
+        .repeat(8, 8)
+        .diff(src(s0))
+        .brightness(0.25)
+      .layer(src(s0).modulate(voronoi(100)).scrollX(1,-0.1))
+        .out();
+    </script>
+
+    <div id="container"></div>
+    <script>
+      let sketch = function(p) {
+        p.setup = function() {
+          p.createCanvas(p.windowWidth, p.windowHeight);
+          p.frameRate(4)
+          textArray = ["📚", "➗", "📏", "➕", "📘", "➖", "🧮", "🔢"];
+        };
+
+        p.draw = function() {
+          //p.clear()
+          p.textSize(p.random(50, 250));
+          index = Math.floor(time % textArray.length);
+          p.text(textArray[index], p.random(width), p.random(height));
+          s0.init({ src: p.canvas });
+        };
+      };
+      new p5(sketch, window.document.getElementById("container"));
+    </script>
+   
+  </body>
+</html>

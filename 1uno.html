@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+    <title>1️⃣</title>
+
+    <!-- Importar CSS -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- IMPORTAR FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Importar javascript -->
+    <script src="/script.js" defer></script>
+
+    <!-- HYDRA LIBRERIA -->
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <!-- P5JS LIBRERIA -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div class="content" role="main">
+        <h1 class="title">I</h1>
+
+        <div class="instructions">
+          <h2>
+            On my own
+          </h2>
+          <p>
+            Ser querido, no deseado,<br />
+            <strong>tal vez es cierto que te añoraron.</strong>
+          </p>
+
+          <canvas id="myCanvas" width="1440px" height="810px"></canvas>
+
+          <button onClick="botonHome()">
+            🏠
+          </button>
+
+          <button onClick="botonRandom()">
+            ⏭️
+          </button>
+
+          <script>
+            var hydra = new Hydra({
+              canvas: document.getElementById("myCanvas"),
+              detectAudio: false
+            });
+
+            s0.initImage("https://i.ibb.co/Sd1zfcp/fondo1.jpg");
+            s1.initCam();
+            src(s0)
+              .modulate(
+                src(s1)
+                  .scale(0.5)
+                  .mask(
+                    shape(100, 0.3, 0.075)
+                      .scrollY(0.91)
+                      .scale(1, 0.75)
+                  ),
+                0.5
+              )
+              .repeat([1, 2, 1, 2], [1, 2, 1, 2].ease("easeInOutQuint"))
+              .modulate(voronoi(1).colorama(2.5))
+              .out();
+            speed = 0.25;
+          </script>
+        </div>
+      </div>
+    </div>
+    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ 
+    <footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remixea en Glitch
+      </a>
+    </footer>-->
+  </body>
+</html>
