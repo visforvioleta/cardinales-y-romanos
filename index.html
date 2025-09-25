@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardinales & Romanos 📖</title>
+
+  <!-- Estilos y fuentes -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+
+  <!-- Script principal -->
+  <script src="/script.js" defer></script>
+  <!-- Librerías externas: HYDRA y p5.js -->
+  <script src="https://unpkg.com/hydra-synth"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content" role="main">
+      <h1 class="title">XX</h1>
+      <div class="instructions">
+        <h2>¿De qué forma interpretarías tal cantidad de datos?</h2>
+        <p>
+          Para ser sincera los números siempre me han asustado, las estructuras, la lógica como un abismo. La necesidad de pensar y la pizarra llena en un abrir y cerrar de ojos ¿y yo?. Evitando contacto visual para salir a responder.<br /><br />
+          Es quizás, ahora, que los disfruto un poco más, que puedo asimilarlos más allá del valor, en como se manifiestan, omnipotentes en cierto modo.<br /><br />
+          <strong>El siguiente es un ejercicio personal, una bitácora visual que intenta decodificar <small>(los datos cardinales y romanos que me fueron entregados)</small> analizando, sorteando, desglosando y rememorando algunos parajes virtualmente reales.</strong>
+        </p>
+        <canvas id="myCanvas" width="1440" height="810"></canvas>
+        <button onClick="botonRandom()">⏭️</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="container"></div>
+
+  <!-- Script Hydra -->
+  <script>
+    var hydra = new Hydra({
+      canvas: document.getElementById("myCanvas"),
+      detectAudio: false
+    });
+
+    src(o0)
+      .layer(src(s0).modulate(noise(1)))
+      .hue(0.75)
+      .mult(s0, [0.001, 0.01, 0.2].ease("easeInQuint"))
+      .scale([0.9966, 0.9976, 0.9986].ease("easeInOutQuint"))
+      .diff(gradient(1), 0.1)
+      .out();
+  </script>
+
+  <!-- Script p5.js -->
+  <script>
+    let sketch = function(p) {
+      let textArray;
+      p.setup = function() {
+        p.createCanvas(p.windowWidth, p.windowHeight);
+        p.background("rgba(0%,0%,0%,0)");
+        p.frameRate(2);
+        textArray = [
+          "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+          "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX"
+        ];
+      };
+
+      p.draw = function() {
+        p.clear();
+        p.stroke(
+          p.random(155, 255),
+          p.random(155, 255),
+          p.random(155, 255),
+          p.random(255)
+        );
+        p.fill(
+          p.random(155, 255),
+          p.random(155, 255),
+          p.random(155, 255),
+          p.random(255)
+        );
+        p.strokeWeight(p.random(1, 10));
+        p.textSize(p.random(50, 500));
+        let index = Math.floor(performance.now() / 1000 % textArray.length);
+        p.text(textArray[index], p.random(p.width), p.random(p.height));
+        s0.init({ src: p.canvas });
+      };
+    };
+    new p5(sketch, document.getElementById("container"));
+  </script>
+
+  <!-- Footer comentado (opcional) -->
+ 
+  <footer class="footer">
+    <div class="links"></div>
+    <a class="btn--remix" target="_top" href="https://glitch.com/edit/#!/remix/glitch-hello-website">
+      <img src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140" alt="" />
+      Remixea en Glitch
+    </a>
+  </footer>
+
+</body>
+</html>
