@@ -11,8 +11,9 @@ const pages = [
 
 // Obtiene el nombre del archivo actual (sin extensión .html)
 const path = window.location.pathname;
-const file = path.split("/").pop();
-const number = file.slice(0, file.length - 5);
+// Esta lógica está bien para identificar la página actual.
+const file = path.split("/").pop(); 
+const number = file.slice(0, file.length - 5); 
 
 // Filtra la página actual para no incluirla en la selección aleatoria
 const pagesExcept = pages.filter(page => page !== number);
@@ -20,10 +21,12 @@ const pagesExcept = pages.filter(page => page !== number);
 // Redirige a una página aleatoria distinta a la actual
 function botonRandom() {
   const randomPage = pagesExcept[getRandomInt(0, pagesExcept.length)];
-  window.location.href = "/" + randomPage + ".html";
+  // ✅ SOLUCIÓN: Quitamos el '/' para usar una ruta relativa.
+  window.location.href = randomPage + ".html"; 
 }
 
 // Redirige a la página principal
 function botonHome() {
-  window.location.href = "/";
+  // ✅ SOLUCIÓN: Redirecciona al index.html, que es la página principal.
+  window.location.href = "index.html"; 
 }
