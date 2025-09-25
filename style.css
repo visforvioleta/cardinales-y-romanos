@@ -1,7 +1,3 @@
-/******************************************************************************
-START Glitch hello-app default styles
-******************************************************************************/
-
 /* Variables globales */
 :root {
   --color-bg: #69F7BE;
@@ -118,63 +114,6 @@ input {
   transform: translateY(5px);
 }
 
-/* Footer y enlaces */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem auto 0;
-  padding: 1rem 0 0.75rem 0;
-  width: 100%;
-  flex-wrap: wrap;
-  border-top: 4px solid #fff;
-}
-.footer .links {
-  padding: 0.5rem 1rem 1.5rem;
-  white-space: nowrap;
-}
-.footer a:not(.btn--remix):link,
-.footer a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000;
-  text-decoration: none;
-  border-style: none;
-}
-.footer a:hover {
-  background: var(--color-primary);
-}
-.divider {
-  padding: 0 1rem;
-}
-
-/* Botón Remix Glitch */
-.btn--remix {
-  font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  height: 2.75rem;
-  align-items: center;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 40px;
-  text-decoration: none;
-  color: #000;
-  white-space: nowrap;
-  margin-left: auto;
-  box-sizing: border-box;
-}
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
-
 /* Canvas visuales */
 #myCanvas,
 #container {
@@ -188,7 +127,3 @@ input {
   position: fixed;
   background-size: cover;
 }
-
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
